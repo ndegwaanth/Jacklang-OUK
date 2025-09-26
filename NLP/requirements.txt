@@ -1,0 +1,16 @@
+numpy
+pandas
+scikit-learn
+tensorflow
+torch
+spacy
+nltk
+transformers
+gensim
+scipy
+matplotlib
+seaborn
+textblob
+flair
+sentence-transformers
+

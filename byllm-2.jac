@@ -1,5 +1,6 @@
 import from byllm { Model }
-GEMINI_API_KEY="AIzaSyCIdU_4nEpeCKIjfMZjGZ604QMdZjD7how"
+import os;
+
 
 glob llm = Model(
     model_name="gemini-1.5-flash",    # Gemini model name

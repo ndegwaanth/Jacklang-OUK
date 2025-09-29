@@ -1,3 +1,17 @@
+# Jac programming
+byllm
+jaclang
+
+#GEMINI 
+google-auth 
+google-auth-oauthlib 
+google-auth-httplib2 
+google-api-python-client
+
+# GOOGLE AI STUDIO API KEY
+google-generativeai
+
+
 # Core NLP libraries
 nltk==3.9.1
 spacy==3.7.2

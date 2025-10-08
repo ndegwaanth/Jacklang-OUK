@@ -12,3 +12,14 @@ with entry{
         print(name[i]);
     }
 }
+
+with entry {
+    print("Converting scores (0-100) to GPA (0-4.0):");
+
+    # This loop starts at 40, continues as long as score <= 100,
+    # and increases the score by 10 in each step.
+    for score = 40 to score <= 100 by score += 10 {
+        gpa: float = (score - 40) * 4.0 / 60.0;
+        print(f"Score {score} -> GPA {gpa}");
+    }
+}

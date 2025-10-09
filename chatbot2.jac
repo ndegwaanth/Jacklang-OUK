@@ -1,7 +1,7 @@
 import from openai { OpenAI }
 
 # API key directly in the file
-glob OPENROUTER_API_KEY="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";
+glob OPENROUTER_API_KEY="";
 
 # Site info also in the file
 glob SITE_URL = "https://myapp.com";

@@ -1,6 +1,6 @@
 import from openai { OpenAI }
 
-glob OPENROUTER_API_KEY = "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";
+glob OPENROUTER_API_KEY = "";
 glob m: int = 10;
 
 glob client = OpenAI(

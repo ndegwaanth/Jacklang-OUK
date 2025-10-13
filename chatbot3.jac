@@ -1,6 +1,7 @@
 import from openai { OpenAI }
 
-glob OPENROUTER_API_KEY = "";
+glob OPENROUTER_API_KEY = "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";
+glob m: int = 10;
 
 glob client = OpenAI(
     base_url = "https://openrouter.ai/api/v1",
@@ -8,7 +9,7 @@ glob client = OpenAI(
 );
 
 """ Write a poem about topic with error handling """
-def write_poetry(topic: str) -> str {
+def gpt_gen(topic: str) -> str {
     try {
         completion = client.chat.completions.create(
             extra_headers = {
@@ -19,13 +20,13 @@ def write_poetry(topic: str) -> str {
             messages = [
                 {
                     "role": "user", 
-                    "content": f"Write a beautiful 20-line poem about {topic}."
+                    "content": f"Tailor the response based on this topic: {topic}."
                 }
             ],
             max_tokens = 2000
         );
         
-        print("Raw completion:", completion);
+        # print("Raw completion:", completion);
         
         # Extract the content safely
         if completion.choices and completion.choices != [] {
@@ -45,10 +46,12 @@ def write_poetry(topic: str) -> str {
 }
 
 with entry {
-    print("Testing poetry generation...");
-    poem = write_poetry("a serene landscape with mountains at sunset");
-    print("\nGenerated Poem:");
-    print("=" * 40);
-    print(poem);
-    print("=" * 40);
+    print("Testing deepseek model...");
+    while 1 {   
+        user_input = input("What can I help you with today? ");
+        poem = gpt_gen(user_input);
+        print("=" * 40);
+        print(poem);
+        print("=" * 40);
+    }
 }

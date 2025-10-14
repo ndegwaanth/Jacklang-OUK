@@ -6,7 +6,7 @@ torch
 spacy
 nltk
 transformers
-gensim
+# gensim
 scipy
 matplotlib
 seaborn

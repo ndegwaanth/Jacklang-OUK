@@ -1,0 +1,74 @@
+
+## 📁 Frontend Files
+
+**frontend/index.html**
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jac AI Poem Generator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎭 Jac AI Poem Generator</h1>
+            <p>Powered by OpenRouter & DeepSeek AI</p>
+        </header>
+
+        <main>
+            <div class="input-section">
+                <input 
+                    type="text" 
+                    id="topicInput" 
+                    placeholder="Enter a topic for your poem (e.g., nature, love, technology)..."
+                    maxlength="100"
+                >
+                <button id="generateBtn" onclick="generatePoem()">
+                    <span id="btnText">Generate Poem</span>
+                    <div id="loadingSpinner" class="spinner hidden"></div>
+                </button>
+            </div>
+
+            <div class="examples">
+                <p>Try: <span class="example-topic" onclick="setExample('sunset')">sunset</span>, 
+                <span class="example-topic" onclick="setExample('friendship')">friendship</span>, 
+                <span class="example-topic" onclick="setExample('ocean')">ocean</span>, 
+                <span class="example-topic" onclick="setExample('technology')">technology</span></p>
+            </div>
+
+            <div id="resultSection" class="result-section hidden">
+                <h2>Poem about: <span id="poemTopic"></span></h2>
+                <div class="poem-container">
+                    <pre id="poemContent"></pre>
+                </div>
+                <div class="poem-actions">
+                    <button onclick="copyToClipboard()" class="secondary-btn">📋 Copy Poem</button>
+                    <button onclick="sharePoem()" class="secondary-btn">📤 Share</button>
+                    <button onclick="generateNew()" class="secondary-btn">🔄 New Poem</button>
+                </div>
+            </div>
+
+            <div id="errorSection" class="error-section hidden">
+                <h2>❌ Error Generating Poem</h2>
+                <p id="errorMessage"></p>
+                <button onclick="hideError()" class="secondary-btn">Try Again</button>
+            </div>
+
+            <div id="statusIndicator" class="status-indicator">
+                <span id="statusDot" class="status-dot"></span>
+                <span id="statusText">Checking server status...</span>
+            </div>
+        </main>
+
+        <footer>
+            <p>Built with <a href="https://www.jac-lang.org/" target="_blank">Jac Language</a> | 
+               AI by <a href="https://openrouter.ai/" target="_blank">OpenRouter</a></p>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

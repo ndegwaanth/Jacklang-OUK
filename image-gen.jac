@@ -1,6 +1,6 @@
 import from openai { OpenAI }
 
-glob OPENROUTER_API_KEY = "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";
+glob OPENROUTER_API_KEY = "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";
 
 
 def text_gen_with_llama(prompt: str) -> str {
@@ -36,7 +36,15 @@ def text_gen_with_llama(prompt: str) -> str {
 }
 
 with entry {
-    prompt = input("Enter your prompt for LLaMA 3.2 (free): ");
-    response = text_gen_with_llama(prompt);
-    print(f"LLaMA Response: {response}");
+    while 1 {
+        print("Enter a prompt for text generation (or type 'exit' to quit): ");
+        user_input = input().strip();
+        
+        if user_input.lower() == "exit" {
+            break;
+        }
+        
+        result = text_gen_with_llama(user_input);
+        print(f"{result}");
+    }
 }

@@ -1,0 +1,26 @@
+# Core Jaseci Engine and Jac Language
+jaseci==1.4.2.6
+
+# CLI support and shell utilities
+click==8.1.7
+click-shell==2.1
+
+# Scientific and numerical dependencies
+numpy==1.23.5
+
+# HTTP, data, and logging dependencies
+requests>=2.28.0,<3.0
+PyYAML>=6.0
+pandas>=1.5.0,<2.2
+tqdm>=4.64.0
+rich>=13.0.0
+
+# Machine Learning optional modules
+scikit-learn>=1.2.0
+torch>=2.0.0
+transformers>=4.36.0
+
+# Misc dependencies (safe defaults)
+wheel>=0.40.0
+setuptools>=68.0.0
+

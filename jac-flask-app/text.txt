@@ -1,0 +1,3 @@
+jac run jac/models.jac
+jac run jac/api_walkers.jac
+jac run jac/ai_processing.jac

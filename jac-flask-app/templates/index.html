@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Jac-Flask User App</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>User Management with Jac Backend</h1>
+        
+        <!-- Add User Form -->
+        <div class="form-section">
+            <h2>Add New User</h2>
+            <form id="userForm">
+                <input type="text" id="name" placeholder="Name" required>
+                <input type="email" id="email" placeholder="Email" required>
+                <input type="number" id="age" placeholder="Age" required>
+                <button type="submit">Add User</button>
+            </form>
+        </div>
+
+        <!-- Users List -->
+        <div class="users-section">
+            <h2>Users</h2>
+            <button onclick="loadUsers()">Refresh Users</button>
+            <button onclick="analyzeUsers()">Analyze Users</button>
+            <div id="usersList"></div>
+        </div>
+
+        <!-- Analysis Results -->
+        <div id="analysisResult" class="analysis-section"></div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>

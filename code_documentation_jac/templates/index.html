@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Auto Doc Generator</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="container">
+    <h1>GitHub Repo → RMarkdown Documentation</h1>
+    <form method="POST">
+      <input type="text" name="repo_url" placeholder="Enter GitHub Repository URL" required>
+      <button type="submit">Generate Documentation</button>
+    </form>
+
+    {% if result %}
+      <h2>Generated Documentation:</h2>
+      <pre>{{ result }}</pre>
+    {% endif %}
+  </div>
+</body>
+</html>
